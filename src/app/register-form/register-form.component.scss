@@ -1,0 +1,107 @@
+.mainSection {
+  width: 600px;
+  height: 400px;
+  margin: 50px auto;
+  h1 {
+    margin-bottom: 0;
+  }
+}
+
+.userInfoSection {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  align-items: center;
+
+  /*Tablet and desktop styles*/
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+  }
+}
+
+.userInfoIcon {
+  width: 80px;
+  height: 80px;
+  background-color: #d6e4f7;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+  &_text {
+    font-size: 40px;
+  }
+}
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+
+  @media (min-width: 768px) {
+    margin-top: 20px;
+  }
+}
+
+.navList {
+  display: flex;
+  flex-direction: row;
+  margin-left: -18px;
+  padding: 0;
+
+  &_item {
+    margin: 0;
+    padding: 0;
+    width: 140px;
+    &-text {
+      color: #7e81fb;
+      margin-left: 50px;
+    }
+    &-link {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+  }
+}
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.btn {
+  display: inline-block;
+  width: 400px;
+  font-size: 15px;
+  margin-top: 20px;
+
+  @media (min-width: 768px) {
+    width: 100px;
+  }
+}
+
+.formFieldInput {
+  margin-top: 20px;
+  width: 400px;
+}
+.icon {
+  color: #cccccc;
+  position: absolute;
+  top: 15px;
+  left: 0;
+}
+.error {
+  font-size: 16px;
+}

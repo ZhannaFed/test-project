@@ -1,0 +1,94 @@
+<div class="mainSection">
+  <div class="userInfoSection">
+    <div class="userInfoIcon"><span class="userInfoIcon_text">АИ</span></div>
+    <div class="userInfo">
+      <h1>Иван Иванов</h1>
+      <mat-nav-list class="navList">
+        <mat-list-item class="navList_item">
+          <a mat-list-item href="#" class="navList_item-link">
+            <mat-icon
+              matListItemIcon
+              aria-hidden="false"
+              aria-label="Example folder icon"
+              fontIcon="folder"
+              class="icon"
+            ></mat-icon>
+            <span matLine class="navList_item-text">Telegram</span>
+          </a>
+        </mat-list-item>
+        <mat-list-item class="navList_item">
+          <a mat-list-item href="#" class="navList_item-link">
+            <mat-icon
+              matListItemIcon
+              aria-hidden="false"
+              aria-label="Example folder icon"
+              fontIcon="folder"
+              class="icon"
+            ></mat-icon>
+            <span matLine class="navList_item-text">Github</span>
+          </a>
+        </mat-list-item>
+        <mat-list-item class="navList_item">
+          <a mat-list-item href="#" class="navList_item-link">
+            <mat-icon
+              matListItemIcon
+              aria-hidden="false"
+              aria-label="Example folder icon"
+              fontIcon="folder"
+              class="icon"
+            ></mat-icon>
+            <span matLine class="navList_item-text">Resume</span>
+          </a>
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <form class="registerForm" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="formFieldInput">
+      <mat-label>Номер телефона</mat-label>
+      <span matPrefix>&nbsp;+7 &nbsp;</span>
+      <input
+        type="tel"
+        matInput
+        maxlength="15"
+        placeholder="(999) 999-99-99"
+        formControlName="phone"
+        #userPhoneInput
+        (input)="onCreateMask($event)"
+      />
+      <!-- pattern="[\(]{0,1}[0-9]{3}[\)]{0,1}\s[0-9]{3}\s[0-9]{2}[\-][0-9]{2}" -->
+      <mat-error *ngIf="form.get('phone')?.errors?.['required']" class="error">
+        Поле является обязательным
+      </mat-error>
+      <mat-error *ngIf="form.get('phone')?.errors?.['minlength']" class="error">
+        Введите корректный номер телефона
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="formFieldInput">
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        placeholder="tim.jennings@example.com"
+        required
+        formControlName="email"
+      />
+      <mat-error *ngIf="form.get('email')?.errors?.['required']" class="error">
+        Поле является обязательным
+      </mat-error>
+      <mat-error *ngIf="form.get('email')?.errors?.['pattern']" class="error">
+        Введите корректный email
+      </mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      class="btn"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      Начать
+    </button>
+  </form>
+</div>
