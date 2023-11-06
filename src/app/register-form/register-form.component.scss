@@ -1,9 +1,12 @@
 .mainSection {
-  width: 600px;
+  width: 500px;
   height: 400px;
   margin: 50px auto;
   h1 {
     margin-bottom: 0;
+  }
+  @media (min-width: 768px) {
+    width: 600px;
   }
 }
 
@@ -83,7 +86,7 @@
 
 .btn {
   display: inline-block;
-  width: 400px;
+  width: 350px;
   font-size: 15px;
   margin-top: 20px;
 
@@ -94,7 +97,11 @@
 
 .formFieldInput {
   margin-top: 20px;
-  width: 400px;
+  width: 350px;
+
+  @media (min-width: 768px) {
+    width: 400px;
+  }
 }
 .icon {
   color: #cccccc;
